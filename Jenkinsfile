@@ -11,9 +11,7 @@ pipeline {
     }
 
     stages {
-        stage('Parallel Execution') {
-            parallel failFast: true, // Stops all branches if one fails
-            {
+        
                 stage('Git Checkout') {
                     when { expression { params.action == 'create' } }
                     steps {
@@ -99,5 +97,4 @@ pipeline {
                 }
             }
         }
-    }
-}
+    
