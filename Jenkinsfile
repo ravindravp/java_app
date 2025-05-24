@@ -25,7 +25,7 @@ pipeline {
                     when { expression { params.action == 'create' } }
                     steps {
                         script {
-                            mvnTest()
+                            sh 'mvn test'
                         }
                     }
                 }
